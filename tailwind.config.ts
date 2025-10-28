@@ -15,7 +15,7 @@ export default {
     extend: {
       fontFamily: {
         serif: ['Playfair Display', 'serif'],
-        sans: ['Inter', 'sans-serif'],
+        sans: ['Poppins', 'Inter', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -86,10 +86,10 @@ export default {
         },
         "glow": {
           "0%": { 
-            filter: "brightness(1) drop-shadow(0 0 20px hsl(200 100% 50% / 0.4))" 
+            filter: "brightness(1) drop-shadow(0 0 20px hsl(195 100% 50% / 0.5))" 
           },
           "100%": { 
-            filter: "brightness(1.2) drop-shadow(0 0 40px hsl(200 100% 50% / 0.6))" 
+            filter: "brightness(1.2) drop-shadow(0 0 40px hsl(195 100% 50% / 0.7))" 
           },
         },
         "float": {
