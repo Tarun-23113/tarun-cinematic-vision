@@ -1,41 +1,61 @@
 const About = () => {
   return (
-    <section id="about" className="py-32 px-4 relative">
-      <div className="max-w-4xl mx-auto">
-        <div className="mb-16 animate-fade-up">
-          <span className="text-primary text-sm font-semibold tracking-widest uppercase">
-            About Me
-          </span>
-          <h2 className="text-5xl md:text-6xl font-bold mt-4 mb-8">
-            Crafting Stories Through{" "}
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Motion
-            </span>
-          </h2>
+    <section id="about" className="py-32 px-4 relative overflow-hidden">
+      {/* Subtle light reflections */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-96 h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent blur-sm" />
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-secondary/5 rounded-full blur-[100px]" />
+      </div>
+
+      <div className="max-w-5xl mx-auto relative z-10">
+        {/* Cinematic Video/Intro Section */}
+        <div className="mb-20 animate-fade-up">
+          <div className="relative rounded-2xl overflow-hidden border-2 border-primary/40 shadow-[0_0_60px_hsl(42_39%_61%/0.2)] group">
+            {/* Video thumbnail placeholder */}
+            <div className="aspect-[16/9] bg-gradient-to-br from-card via-background-dark to-card relative">
+              <img
+                src="/assets/hero-3d.jpg"
+                alt="Cinematic intro"
+                className="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700"
+              />
+              
+              {/* Overlay text */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center px-6">
+                  <h2 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+                    <span className="bg-gradient-to-r from-foreground via-primary-glow to-foreground bg-clip-text text-transparent">
+                      Crafting Emotion
+                    </span>
+                  </h2>
+                  <h3 className="text-3xl md:text-5xl font-bold leading-tight">
+                    <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                      Through Every Frame
+                    </span>
+                  </h3>
+                </div>
+              </div>
+
+              {/* Play button overlay */}
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="w-20 h-20 rounded-full bg-primary/20 backdrop-blur-sm border-2 border-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-[0_0_40px_hsl(42_39%_61%/0.4)]">
+                  <div className="w-0 h-0 border-t-8 border-t-transparent border-l-12 border-l-primary border-b-8 border-b-transparent ml-1" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="space-y-6 text-lg text-muted-foreground leading-relaxed animate-fade-up">
-          <p>
-            I'm Tarun Tiwari, a passionate video editor dedicated to transforming raw footage 
-            into compelling visual narratives. My approach centers on the art of storytelling—where 
-            every cut, transition, and effect serves to enhance the emotional journey of the viewer.
-          </p>
-          
-          <p>
-            With expertise in pacing, rhythm, and visual composition, I create content that doesn't 
-            just look good—it feels right. Whether it's a 15-second social media reel or a 
-            feature-length documentary, I bring the same level of precision and creative vision to 
-            every project.
-          </p>
-
-          <p>
-            My editing philosophy is simple: <span className="text-foreground font-semibold">every frame should have purpose</span>. 
-            I specialize in creating visually engaging narratives that capture attention, 
-            maintain momentum, and leave a lasting impact on audiences.
+        {/* About Text */}
+        <div className="mb-16 text-center animate-fade-up">
+          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+            I'm <span className="text-primary font-semibold">Tarun Tiwari</span>, a video editor who believes 
+            every frame tells a story. I transform raw footage into compelling visual narratives 
+            that captivate, inspire, and leave lasting impressions.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
+        {/* Stats Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 animate-fade-up">
           {[
             { number: "100+", label: "Projects Completed" },
             { number: "50+", label: "Happy Clients" },
@@ -44,12 +64,15 @@ const About = () => {
           ].map((stat, index) => (
             <div
               key={index}
-              className="text-center p-6 rounded-lg bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_hsl(200_100%_50%/0.2)]"
+              className="group text-center p-6 rounded-xl bg-card/60 backdrop-blur-sm border border-border hover:border-primary/50 transition-all duration-500 relative overflow-hidden"
             >
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
+              {/* Gold top border glow */}
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">
                 {stat.number}
               </div>
-              <div className="text-sm text-muted-foreground">{stat.label}</div>
+              <div className="text-sm text-muted-foreground uppercase tracking-wider">{stat.label}</div>
             </div>
           ))}
         </div>

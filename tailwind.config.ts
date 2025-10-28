@@ -86,10 +86,24 @@ export default {
         },
         "glow": {
           "0%": { 
-            filter: "brightness(1) drop-shadow(0 0 20px hsl(195 100% 50% / 0.5))" 
+            filter: "brightness(1) drop-shadow(0 0 20px hsl(42 39% 61% / 0.4))" 
           },
           "100%": { 
-            filter: "brightness(1.2) drop-shadow(0 0 40px hsl(195 100% 50% / 0.7))" 
+            filter: "brightness(1.2) drop-shadow(0 0 40px hsl(42 39% 61% / 0.6))" 
+          },
+        },
+        "shimmer": {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
+        },
+        "aurora": {
+          "0%, 100%": { 
+            backgroundPosition: "0% 50%",
+            opacity: "0.3"
+          },
+          "50%": { 
+            backgroundPosition: "100% 50%",
+            opacity: "0.5"
           },
         },
         "float": {
@@ -104,6 +118,8 @@ export default {
         "fade-up": "fade-up 0.8s ease-out",
         "glow": "glow 2s ease-in-out infinite alternate",
         "float": "float 6s ease-in-out infinite",
+        "shimmer": "shimmer 3s linear infinite",
+        "aurora": "aurora 8s ease-in-out infinite",
       },
     },
   },

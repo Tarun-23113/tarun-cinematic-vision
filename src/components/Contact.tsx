@@ -33,17 +33,17 @@ const Contact = () => {
     <section id="contact" className="py-32 px-4 relative">
       <div className="max-w-5xl mx-auto">
         <div className="mb-16 text-center animate-fade-up">
-          <span className="text-primary text-sm font-semibold tracking-widest uppercase">
+          <span className="text-primary text-sm font-semibold tracking-[0.3em] uppercase">
             Get In Touch
           </span>
-          <h2 className="text-5xl md:text-6xl font-bold mt-4 mb-8">
+          <h2 className="text-5xl md:text-7xl font-bold mt-6 mb-6 leading-tight">
             Let's Create{" "}
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
               Together
             </span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Have a project in mind? I'd love to hear about it and discuss how we can bring your vision to life.
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
+            Have a project in mind? Let's bring your vision to life.
           </p>
         </div>
 
@@ -56,7 +56,7 @@ const Contact = () => {
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
-                className="bg-card border-border focus:border-primary transition-colors"
+                className="bg-card/60 backdrop-blur-sm border-border focus:border-secondary focus:ring-2 focus:ring-secondary/30 transition-all"
               />
             </div>
             
@@ -67,7 +67,7 @@ const Contact = () => {
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
-                className="bg-card border-border focus:border-primary transition-colors"
+                className="bg-card/60 backdrop-blur-sm border-border focus:border-secondary focus:ring-2 focus:ring-secondary/30 transition-all"
               />
             </div>
             
@@ -78,13 +78,13 @@ const Contact = () => {
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 required
                 rows={6}
-                className="bg-card border-border focus:border-primary transition-colors resize-none"
+                className="bg-card/60 backdrop-blur-sm border-border focus:border-secondary focus:ring-2 focus:ring-secondary/30 transition-all resize-none"
               />
             </div>
 
             <Button
               type="submit"
-              className="w-full bg-primary hover:bg-primary-glow text-primary-foreground transition-all duration-300 hover:shadow-[0_0_30px_hsl(200_100%_50%/0.5)] group"
+              className="w-full bg-primary hover:bg-primary-glow text-background font-semibold transition-all duration-300 hover:shadow-[0_0_40px_hsl(42_39%_61%/0.5)] group"
             >
               <span>Send Message</span>
               <Send className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -93,8 +93,8 @@ const Contact = () => {
 
           {/* Contact Info */}
           <div className="space-y-8">
-            <div className="p-8 rounded-xl bg-card border border-border">
-              <h3 className="text-2xl font-bold mb-6">Connect With Me</h3>
+            <div className="p-8 rounded-xl bg-card/60 backdrop-blur-sm border border-border">
+              <h3 className="text-2xl font-bold mb-6 text-primary">Connect With Me</h3>
               
               <div className="space-y-4">
                 {socials.map((social, index) => {
@@ -103,22 +103,22 @@ const Contact = () => {
                     <a
                       key={index}
                       href={social.href}
-                      className={`flex items-center gap-4 p-4 rounded-lg bg-background hover:bg-muted transition-all duration-300 group ${social.color}`}
+                      className="flex items-center gap-4 p-4 rounded-lg bg-background/60 hover:bg-muted border border-border/50 hover:border-secondary/50 transition-all duration-300 group"
                     >
-                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                        <Icon className="w-6 h-6" />
+                      <div className="w-12 h-12 rounded-lg bg-secondary/10 border border-secondary/30 flex items-center justify-center group-hover:bg-secondary/20 group-hover:shadow-[0_0_20px_hsl(163_62%_46%/0.3)] transition-all">
+                        <Icon className="w-6 h-6 text-secondary" />
                       </div>
-                      <span className="font-medium">{social.label}</span>
+                      <span className="font-medium group-hover:text-secondary transition-colors">{social.label}</span>
                     </a>
                   );
                 })}
               </div>
             </div>
 
-            <div className="p-8 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 border border-primary/30">
-              <h4 className="text-lg font-bold mb-3">Response Time</h4>
-              <p className="text-muted-foreground">
-                I typically respond to all inquiries within 24-48 hours. For urgent projects, 
+            <div className="p-8 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 border border-primary/30 backdrop-blur-sm">
+              <h4 className="text-lg font-bold mb-3 text-primary">Response Time</h4>
+              <p className="text-muted-foreground leading-relaxed">
+                I typically respond within 24-48 hours. For urgent projects, 
                 please mention it in your message.
               </p>
             </div>
