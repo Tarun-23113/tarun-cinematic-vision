@@ -29,7 +29,7 @@ Your contact form currently uses a **mailto** approach that opens the user's def
 - Click "Add New Service"
 - Choose your email provider (Gmail, Outlook, etc.)
 - Follow setup instructions
-- Note your **Service ID**
+- Note your **Service ID** service_fgxazof
 
 #### 3. Create Email Template
 - Go to "Email Templates"
@@ -49,11 +49,11 @@ Message:
 Sent from your portfolio website contact form
 ```
 
-- Note your **Template ID**
+- Note your **Template ID** template_kwhlbow
 
 #### 4. Get Public Key
 - Go to "Account" → "General"
-- Copy your **Public Key**
+- Copy your **Public Key** W0f_TcsbO1uC1OACx
 
 #### 5. Install EmailJS Package
 ```bash

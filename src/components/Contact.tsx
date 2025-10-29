@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Mail, Instagram, Youtube, Linkedin, Send, Loader2 } from "lucide-react";
+import { Mail, Send, Loader2, Instagram, Youtube, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-// Using Web3Forms for direct email sending
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -20,49 +20,44 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Using Web3Forms for direct email sending (free service)
-      const formDataToSend = new FormData();
-      formDataToSend.append('access_key', 'YOUR_WEB3FORMS_ACCESS_KEY'); // Replace with your key
-      formDataToSend.append('name', formData.name);
-      formDataToSend.append('email', formData.email);
-      formDataToSend.append('message', formData.message);
-      formDataToSend.append('subject', `New Contact Form Message from ${formData.name}`);
-      formDataToSend.append('from_name', 'Portfolio Contact Form');
+      // Using EmailJS for direct email sending
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        to_email: 'tiwaritarun497@gmail.com',
+      };
 
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: formDataToSend
+      await emailjs.send(
+        'service_fgxazof', // Your Service ID
+        'template_kwhlbow', // Your Template ID
+        templateParams,
+        'W0f_TcsbO1uC1OACx' // Your Public Key
+      );
+
+      toast({
+        title: "Message Sent Successfully!",
+        description: "Thank you for reaching out. I'll get back to you within 24-48 hours.",
       });
 
-      const result = await response.json();
+      // Clear form
+      setFormData({ name: "", email: "", message: "" });
 
-      if (result.success) {
-        toast({
-          title: "Message Sent Successfully!",
-          description: "Thank you for reaching out. I'll get back to you within 24-48 hours.",
-        });
-        
-        // Clear form
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        throw new Error('Form submission failed');
-      }
-      
     } catch (error) {
       console.error('Email sending error:', error);
-      
-      // Fallback to mailto if direct sending fails
+
+      // Fallback to mailto if EmailJS fails
       const subject = `New Contact Form Message from ${formData.name}`;
       const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
       const mailtoLink = `mailto:tiwaritarun497@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-      
+
       window.location.href = mailtoLink;
-      
+
       toast({
         title: "Fallback: Email Client Opened",
         description: "Direct sending failed. Your email client should open with the message pre-filled.",
       });
-      
+
       setTimeout(() => {
         setFormData({ name: "", email: "", message: "" });
       }, 1000);
@@ -72,9 +67,9 @@ const Contact = () => {
   };
 
   const socials = [
-    { icon: Instagram, label: "Instagram", href: "", color: "hover:text-pink-500" },
-    { icon: Youtube, label: "YouTube", href: "#", color: "hover:text-red-500" },
-    { icon: Linkedin, label: "LinkedIn", href: "#", color: "hover:text-blue-500" },
+    { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/chaotic_forge/", color: "hover:text-pink-500" },
+    { icon: Youtube, label: "YouTube", href: "http://www.youtube.com/@taruntiwari611", color: "hover:text-red-500" },
+    { icon: Linkedin, label: "LinkedIn", href: "www.linkedin.com/in/tarun-tiwari-0b1621283", color: "hover:text-blue-500" },
     { icon: Mail, label: "Email", href: "mailto:tiwaritarun497@gmail.com", color: "hover:text-primary" },
   ];
 
@@ -108,7 +103,7 @@ const Contact = () => {
                 className="bg-card/60 border-border focus:border-secondary focus:ring-2 focus:ring-secondary/30 transition-all"
               />
             </div>
-            
+
             <div>
               <Input
                 type="email"
@@ -119,7 +114,7 @@ const Contact = () => {
                 className="bg-card/60 border-border focus:border-secondary focus:ring-2 focus:ring-secondary/30 transition-all"
               />
             </div>
-            
+
             <div>
               <Textarea
                 placeholder="Tell me about your project..."
@@ -154,7 +149,7 @@ const Contact = () => {
           <div className="space-y-8">
             <div className="p-8 rounded-xl bg-card/60 border border-border">
               <h3 className="text-2xl font-bold mb-6 text-primary">Connect With Me</h3>
-              
+
               <div className="space-y-4">
                 {socials.map((social, index) => {
                   const Icon = social.icon;
@@ -177,7 +172,7 @@ const Contact = () => {
             <div className="p-8 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 border border-primary/30">
               <h4 className="text-lg font-bold mb-3 text-primary">Response Time</h4>
               <p className="text-muted-foreground leading-relaxed">
-                I typically respond within 24-48 hours. For urgent projects, 
+                I typically respond within 24-48 hours. For urgent projects,
                 please mention it in your message.
               </p>
             </div>
