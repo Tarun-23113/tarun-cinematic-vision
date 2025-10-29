@@ -29,10 +29,10 @@ const Contact = () => {
       };
 
       await emailjs.send(
-        'service_fgxazof', // Your Service ID
-        'template_kwhlbow', // Your Template ID
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         templateParams,
-        'W0f_TcsbO1uC1OACx' // Your Public Key
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
       toast({
