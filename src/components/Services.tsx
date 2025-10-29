@@ -125,65 +125,34 @@ const Services = () => {
               <div
                 key={index}
                 ref={(el) => (cardRefs.current[index] = el)}
-                className={`group relative p-8 rounded-2xl backdrop-blur-sm border border-border/50 
-                  transition-all duration-700 hover:border-transparent hover:-translate-y-2 hover:rotate-1
+                className={`group relative p-8 rounded-xl border border-border/50 bg-background/60
+                  transition-all duration-500 hover:border-primary/30 hover:-translate-y-1
                   ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
-                style={{
-                  background: "linear-gradient(135deg, hsl(158, 35%, 11%) 0%, hsl(150, 30%, 9%) 100%)",
-                  boxShadow: "0 8px 32px hsl(150 30% 0% / 0.5)",
-                }}
               >
-                {/* Gold top border glow */}
-                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                {/* Subtle gold top border */}
+                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
-                {/* Emerald gradient shift on hover */}
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
-                  style={{
-                    background: `linear-gradient(135deg, ${index % 2 === 0 ? 'hsl(42 39% 61% / 0.08)' : 'hsl(163 62% 46% / 0.08)'}, transparent 70%)`,
-                    boxShadow: `0 0 40px ${index % 2 === 0 ? 'hsl(42 39% 61% / 0.25)' : 'hsl(163 62% 46% / 0.25)'}`,
-                  }}
-                />
-
-                {/* Parallax icon container */}
-                <div className="mb-6 relative z-10 transform transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-1">
-                  <div className={`w-16 h-16 rounded-xl flex items-center justify-center relative overflow-hidden border
-                    ${index % 2 === 0 ? 'bg-primary/10 border-primary/30' : 'bg-secondary/10 border-secondary/30'}
-                    ${index % 2 === 0 ? 'group-hover:shadow-[0_0_30px_hsl(42_39%_61%/0.4)]' : 'group-hover:shadow-[0_0_30px_hsl(163_62%_46%/0.4)]'}
-                    transition-all duration-500`}>
-                    <Icon className={`w-8 h-8 relative z-10 text-primary`} />
-                    <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 
-                      ${index % 2 === 0 ? 'bg-primary/20' : 'bg-secondary/20'} blur-xl`} />
-                  </div>
+                <div className="mb-6">
+                  <Icon className="w-8 h-8 text-primary" />
                 </div>
 
-                <h3 className="text-2xl font-bold mb-3 transition-all duration-500 relative z-10" 
-                  style={{ color: index % 2 === 0 ? 'hsl(42, 39%, 61%)' : 'hsl(163, 62%, 46%)' }}>
+                <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
                   {service.title}
                 </h3>
                 
-                <p className="text-muted-foreground mb-6 leading-relaxed relative z-10">
+                <p className="text-muted-foreground mb-6 leading-relaxed">
                   {service.description}
                 </p>
 
-                <ul className="space-y-3 relative z-10">
+                <ul className="space-y-2.5">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-sm group/item">
-                      <div className={`w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 transition-all duration-300
-                        ${index % 2 === 0 ? 'bg-primary' : 'bg-secondary'}
-                        group-hover/item:scale-150 group-hover/item:shadow-[0_0_10px_currentColor]`} />
-                      <span className="text-muted-foreground leading-relaxed group-hover/item:text-foreground transition-colors duration-300">
+                    <li key={idx} className="flex items-start gap-3 text-sm">
+                      <span className="text-muted-foreground leading-relaxed">
                         {feature}
                       </span>
                     </li>
                   ))}
                 </ul>
-
-                {/* Hover gradient overlay */}
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
-                  style={{
-                    background: `radial-gradient(circle at 50% 0%, ${index % 2 === 0 ? 'hsl(195 100% 50% / 0.05)' : 'hsl(288 100% 60% / 0.05)'}, transparent 70%)`,
-                  }}
-                />
               </div>
             );
           })}
