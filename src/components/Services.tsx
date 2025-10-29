@@ -126,13 +126,13 @@ const Services = () => {
                 key={index}
                 ref={(el) => (cardRefs.current[index] = el)}
                 className={`group relative p-8 rounded-xl border border-border/50 bg-background/60
-                  transition-all duration-500 hover:border-primary/30 hover:-translate-y-1
+                  transition-all duration-500 hover:border-primary/30 hover:-translate-y-2
                   ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
               >
                 {/* Subtle gold top border */}
                 <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
-                <div className="mb-6">
+                <div className="mb-6 transform transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-1">
                   <Icon className="w-8 h-8 text-primary" />
                 </div>
 
