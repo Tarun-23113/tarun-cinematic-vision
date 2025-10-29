@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         serif: ['Playfair Display', 'serif'],
         sans: ['Poppins', 'Inter', 'sans-serif'],
+        display: ['Space Grotesk', 'Outfit', 'Anton', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -110,6 +111,14 @@ export default {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-20px)" },
         },
+        "slide-in-left": {
+          "0%": { opacity: "0", transform: "translateX(-60px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        "slide-in-right": {
+          "0%": { opacity: "0", transform: "translateX(60px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -120,6 +129,8 @@ export default {
         "float": "float 6s ease-in-out infinite",
         "shimmer": "shimmer 3s linear infinite",
         "aurora": "aurora 8s ease-in-out infinite",
+        "slide-in-left": "slide-in-left 1s ease-out",
+        "slide-in-right": "slide-in-right 1.2s ease-out",
       },
     },
   },
