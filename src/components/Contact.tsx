@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+// Using Web3Forms for direct email sending
 
 const Contact = () => {
   const { toast } = useToast();
@@ -19,66 +20,62 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // OPTION 1: Simple mailto approach (current implementation)
+      // Using Web3Forms for direct email sending (free service)
+      const formDataToSend = new FormData();
+      formDataToSend.append('access_key', 'YOUR_WEB3FORMS_ACCESS_KEY'); // Replace with your key
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('message', formData.message);
+      formDataToSend.append('subject', `New Contact Form Message from ${formData.name}`);
+      formDataToSend.append('from_name', 'Portfolio Contact Form');
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formDataToSend
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast({
+          title: "Message Sent Successfully!",
+          description: "Thank you for reaching out. I'll get back to you within 24-48 hours.",
+        });
+        
+        // Clear form
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        throw new Error('Form submission failed');
+      }
+      
+    } catch (error) {
+      console.error('Email sending error:', error);
+      
+      // Fallback to mailto if direct sending fails
       const subject = `New Contact Form Message from ${formData.name}`;
       const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
-      const mailtoLink = `mailto:tarun.tiwari@example.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+      const mailtoLink = `mailto:tiwaritarun497@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
       
-      // Open default email client
       window.location.href = mailtoLink;
       
       toast({
-        title: "Email Client Opened!",
-        description: "Your default email client should open with the message pre-filled. Please send it from there.",
+        title: "Fallback: Email Client Opened",
+        description: "Direct sending failed. Your email client should open with the message pre-filled.",
       });
       
-      // OPTION 2: For direct email sending, uncomment below and install EmailJS
-      // npm install @emailjs/browser
-      // Then replace the above with EmailJS implementation:
-      /*
-      import emailjs from '@emailjs/browser';
-      
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        message: formData.message,
-        to_email: 'your-email@example.com'
-      };
-
-      await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID', 
-        templateParams,
-        'YOUR_PUBLIC_KEY'
-      );
-
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-      });
-      */
-      
-      // Clear form after a short delay
       setTimeout(() => {
         setFormData({ name: "", email: "", message: "" });
       }, 1000);
-      
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "There was an issue opening your email client. Please try again or contact me directly.",
-        variant: "destructive",
-      });
     } finally {
       setIsSubmitting(false);
     }
   };
 
   const socials = [
-    { icon: Instagram, label: "Instagram", href: "#", color: "hover:text-pink-500" },
+    { icon: Instagram, label: "Instagram", href: "", color: "hover:text-pink-500" },
     { icon: Youtube, label: "YouTube", href: "#", color: "hover:text-red-500" },
     { icon: Linkedin, label: "LinkedIn", href: "#", color: "hover:text-blue-500" },
-    { icon: Mail, label: "Email", href: "mailto:tarun.tiwari@example.com", color: "hover:text-primary" },
+    { icon: Mail, label: "Email", href: "mailto:tiwaritarun497@gmail.com", color: "hover:text-primary" },
   ];
 
   return (
@@ -142,7 +139,7 @@ const Contact = () => {
               {isSubmitting ? (
                 <>
                   <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                  <span>Opening Email...</span>
+                  <span>Sending Message...</span>
                 </>
               ) : (
                 <>
