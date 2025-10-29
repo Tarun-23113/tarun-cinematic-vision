@@ -1,16 +1,12 @@
 const About = () => {
   return (
     <section id="about" className="py-32 px-4 relative overflow-hidden">
-      {/* Subtle light reflections */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent blur-sm" />
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-secondary/5 rounded-full blur-[100px]" />
-      </div>
+
 
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Cinematic Video/Intro Section */}
         <div className="mb-20 animate-fade-up">
-          <div className="relative rounded-2xl overflow-hidden border-2 border-primary/40 shadow-[0_0_60px_hsl(42_39%_61%/0.2)] group">
+          <div className="relative rounded-2xl overflow-hidden border-2 border-primary/40 group">
             {/* Video thumbnail placeholder */}
             <div className="aspect-[16/9] bg-gradient-to-br from-card via-background-dark to-card relative">
               <img
@@ -35,12 +31,7 @@ const About = () => {
                 </div>
               </div>
 
-              {/* Play button overlay */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="w-20 h-20 rounded-full bg-primary/20 backdrop-blur-sm border-2 border-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-[0_0_40px_hsl(42_39%_61%/0.4)]">
-                  <div className="w-0 h-0 border-t-8 border-t-transparent border-l-12 border-l-primary border-b-8 border-b-transparent ml-1" />
-                </div>
-              </div>
+
             </div>
           </div>
         </div>
@@ -54,25 +45,40 @@ const About = () => {
           </p>
         </div>
 
-        {/* Stats Grid */}
+        {/* Skills & Expertise */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 animate-fade-up">
           {[
-            { number: "100+", label: "Projects Completed" },
-            { number: "50+", label: "Happy Clients" },
-            { number: "5+", label: "Years Experience" },
-            { number: "1M+", label: "Total Views" },
-          ].map((stat, index) => (
+            { title: "Video Editing", icon: "🎬", description: "Professional editing" },
+            { title: "Motion Graphics", icon: "⭐", description: "Dynamic animations" },
+            { title: "Color Grading", icon: "🎨", description: "Cinematic looks" },
+            { title: "Sound Design", icon: "🎵", description: "Audio perfection" },
+          ].map((skill, index) => (
             <div
               key={index}
-              className="group text-center p-6 rounded-xl bg-card/60 backdrop-blur-sm border border-border hover:border-primary/50 transition-all duration-500 relative overflow-hidden"
+              className="group text-center p-6 rounded-xl bg-card/60 border border-border hover:border-primary/50 transition-all duration-500 relative overflow-hidden interactive-card hover-lift cursor-pointer"
             >
-              {/* Gold top border glow */}
+              {/* Animated background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              {/* Top glow line */}
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">
-                {stat.number}
+              {/* Icon */}
+              <div className="text-3xl mb-3 group-hover:scale-125 transition-transform duration-300">
+                {skill.icon}
               </div>
-              <div className="text-sm text-muted-foreground uppercase tracking-wider">{stat.label}</div>
+              
+              {/* Title */}
+              <h3 className="text-lg font-bold text-primary mb-2 group-hover:scale-105 transition-all duration-300">
+                {skill.title}
+              </h3>
+              
+              <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                {skill.description}
+              </p>
+
+              {/* Pulse effect */}
+              <div className="absolute inset-0 rounded-xl border-2 border-primary/30 opacity-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 pointer-events-none" />
             </div>
           ))}
         </div>

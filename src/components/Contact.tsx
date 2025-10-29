@@ -56,7 +56,7 @@ const Contact = () => {
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
-                className="bg-card/60 backdrop-blur-sm border-border focus:border-secondary focus:ring-2 focus:ring-secondary/30 transition-all"
+                className="bg-card/60 border-border focus:border-secondary focus:ring-2 focus:ring-secondary/30 transition-all"
               />
             </div>
             
@@ -67,7 +67,7 @@ const Contact = () => {
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
-                className="bg-card/60 backdrop-blur-sm border-border focus:border-secondary focus:ring-2 focus:ring-secondary/30 transition-all"
+                className="bg-card/60 border-border focus:border-secondary focus:ring-2 focus:ring-secondary/30 transition-all"
               />
             </div>
             
@@ -78,13 +78,13 @@ const Contact = () => {
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 required
                 rows={6}
-                className="bg-card/60 backdrop-blur-sm border-border focus:border-secondary focus:ring-2 focus:ring-secondary/30 transition-all resize-none"
+                className="bg-card/60 border-border focus:border-secondary focus:ring-2 focus:ring-secondary/30 transition-all resize-none"
               />
             </div>
 
             <Button
               type="submit"
-              className="w-full bg-primary hover:bg-primary-glow text-background font-semibold transition-all duration-300 hover:shadow-[0_0_40px_hsl(42_39%_61%/0.5)] group"
+              className="w-full bg-primary hover:bg-primary-glow text-background font-semibold transition-all duration-300 group"
             >
               <span>Send Message</span>
               <Send className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -93,7 +93,7 @@ const Contact = () => {
 
           {/* Contact Info */}
           <div className="space-y-8">
-            <div className="p-8 rounded-xl bg-card/60 backdrop-blur-sm border border-border">
+            <div className="p-8 rounded-xl bg-card/60 border border-border">
               <h3 className="text-2xl font-bold mb-6 text-primary">Connect With Me</h3>
               
               <div className="space-y-4">
@@ -105,7 +105,7 @@ const Contact = () => {
                       href={social.href}
                       className="flex items-center gap-4 p-4 rounded-lg bg-background/60 hover:bg-muted border border-border/50 hover:border-secondary/50 transition-all duration-300 group"
                     >
-                      <div className="w-12 h-12 rounded-lg bg-secondary/10 border border-secondary/30 flex items-center justify-center group-hover:bg-secondary/20 group-hover:shadow-[0_0_20px_hsl(163_62%_46%/0.3)] transition-all">
+                      <div className="w-12 h-12 rounded-lg bg-secondary/10 border border-secondary/30 flex items-center justify-center group-hover:bg-secondary/20 transition-all">
                         <Icon className="w-6 h-6 text-primary" />
                       </div>
                       <span className="font-medium group-hover:text-primary transition-colors">{social.label}</span>
@@ -115,7 +115,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="p-8 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 border border-primary/30 backdrop-blur-sm">
+            <div className="p-8 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 border border-primary/30">
               <h4 className="text-lg font-bold mb-3 text-primary">Response Time</h4>
               <p className="text-muted-foreground leading-relaxed">
                 I typically respond within 24-48 hours. For urgent projects, 

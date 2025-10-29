@@ -95,11 +95,7 @@ const Services = () => {
 
   return (
     <section id="services" className="py-32 px-4 relative overflow-hidden" ref={sectionRef}>
-      {/* Animated particle background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[100px] animate-float" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-[100px] animate-float" style={{ animationDelay: "2s" }} />
-      </div>
+
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="mb-20 text-center animate-fade-up">
@@ -132,8 +128,11 @@ const Services = () => {
                 {/* Subtle gold top border */}
                 <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
-                <div className="mb-6 transform transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-1">
-                  <Icon className="w-8 h-8 text-primary" />
+                <div className="mb-6 transform transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-1 relative">
+                  <div className="w-16 h-16 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center group-hover:bg-primary/20 group-hover:border-primary/50 transition-all duration-300">
+                    <Icon className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" />
+                  </div>
+
                 </div>
 
                 <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
@@ -144,10 +143,11 @@ const Services = () => {
                   {service.description}
                 </p>
 
-                <ul className="space-y-2.5">
+                <ul className="space-y-3">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-sm">
-                      <span className="text-muted-foreground leading-relaxed">
+                    <li key={idx} className="flex items-start gap-3 text-sm group/item">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/60 mt-2 group-hover/item:bg-primary group-hover/item:scale-125 transition-all duration-300" />
+                      <span className="text-muted-foreground leading-relaxed group-hover/item:text-foreground transition-colors duration-300">
                         {feature}
                       </span>
                     </li>
