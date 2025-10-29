@@ -69,7 +69,7 @@ const Contact = () => {
   const socials = [
     { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/chaotic_forge/", color: "hover:text-pink-500" },
     { icon: Youtube, label: "YouTube", href: "http://www.youtube.com/@taruntiwari611", color: "hover:text-red-500" },
-    { icon: Linkedin, label: "LinkedIn", href: "www.linkedin.com/in/tarun-tiwari-0b1621283", color: "hover:text-blue-500" },
+    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/tarun-tiwari-0b1621283", color: "hover:text-blue-500" },
     { icon: Mail, label: "Email", href: "mailto:tiwaritarun497@gmail.com", color: "hover:text-primary" },
   ];
 
