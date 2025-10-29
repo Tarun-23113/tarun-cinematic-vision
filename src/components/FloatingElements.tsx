@@ -17,7 +17,7 @@ const FloatingElements = () => {
 
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("mousemove", handleMouseMove);
-    
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("mousemove", handleMouseMove);
@@ -35,7 +35,7 @@ const FloatingElements = () => {
   return (
     <>
       {/* Custom cursor effect */}
-      <div 
+      <div
         className="fixed w-4 h-4 bg-primary/30 rounded-full pointer-events-none z-50 mix-blend-difference transition-transform duration-100"
         style={{
           left: mousePosition.x - 8,

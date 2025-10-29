@@ -6,32 +6,33 @@ const About = () => {
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Cinematic Video/Intro Section */}
         <div className="mb-20 animate-fade-up">
+          {/* Text moved to top in same line */}
+          <div className="text-center mb-8">
+            <h2 className="text-4xl md:text-6xl font-bold leading-tight">
+              <span className="bg-gradient-to-r from-foreground via-primary-glow to-foreground bg-clip-text text-transparent">
+                Crafting Emotion{" "}
+              </span>
+              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                Through Every Frame
+              </span>
+            </h2>
+          </div>
+
+          {/* Video Container */}
           <div className="relative rounded-2xl overflow-hidden border-2 border-primary/40 group">
-            {/* Video thumbnail placeholder */}
             <div className="aspect-[16/9] bg-gradient-to-br from-card via-background-dark to-card relative">
-              <img
-                src="/assets/hero-3d.jpg"
-                alt="Cinematic intro"
-                className="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700"
+              {/* YouTube Embed - Optimized for Portfolio */}
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&mute=1&loop=1&playlist=YOUR_VIDEO_ID&controls=1&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3"
+                title="Tarun Tiwari - Video Editor Showreel"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
               />
               
-              {/* Overlay text */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center px-6">
-                  <h2 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
-                    <span className="bg-gradient-to-r from-foreground via-primary-glow to-foreground bg-clip-text text-transparent">
-                      Crafting Emotion
-                    </span>
-                  </h2>
-                  <h3 className="text-3xl md:text-5xl font-bold leading-tight">
-                    <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-                      Through Every Frame
-                    </span>
-                  </h3>
-                </div>
-              </div>
-
-
+              {/* Subtle overlay for integration */}
+              <div className="absolute inset-0 bg-background/5 group-hover:bg-background/0 transition-all duration-700 pointer-events-none" />
             </div>
           </div>
         </div>

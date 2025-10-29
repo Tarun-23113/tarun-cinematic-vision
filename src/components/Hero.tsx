@@ -47,9 +47,7 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    setOrbitSpeed(hoveredIcon !== null ? 0.3 : 1);
-  }, [hoveredIcon]);
+
 
   return (
     <section className="relative h-screen w-full overflow-hidden flex items-center">
