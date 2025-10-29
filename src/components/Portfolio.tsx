@@ -104,7 +104,7 @@ const Portfolio = () => {
               
               {/* Project info */}
               <div className="p-6">
-                <span className="text-xs text-secondary font-semibold uppercase tracking-wider mb-2 block">
+                <span className="text-xs font-semibold uppercase tracking-wider mb-2 block bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
                   {project.category}
                 </span>
                 <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">{project.title}</h3>

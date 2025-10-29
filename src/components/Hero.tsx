@@ -63,8 +63,10 @@ const Hero = () => {
           </span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-secondary mb-14 font-light tracking-[0.1em]">
-          Video Editor • Visual Storyteller
+        <p className="text-xl md:text-2xl mb-14 font-light tracking-[0.1em]">
+          <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+            Video Editor • Visual Storyteller
+          </span>
         </p>
 
         <div className="flex gap-5 justify-center flex-wrap">

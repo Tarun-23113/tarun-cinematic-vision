@@ -150,7 +150,7 @@ const Services = () => {
                     ${index % 2 === 0 ? 'bg-primary/10 border-primary/30' : 'bg-secondary/10 border-secondary/30'}
                     ${index % 2 === 0 ? 'group-hover:shadow-[0_0_30px_hsl(42_39%_61%/0.4)]' : 'group-hover:shadow-[0_0_30px_hsl(163_62%_46%/0.4)]'}
                     transition-all duration-500`}>
-                    <Icon className={`w-8 h-8 relative z-10 ${index % 2 === 0 ? 'text-primary' : 'text-secondary'}`} />
+                    <Icon className={`w-8 h-8 relative z-10 text-primary`} />
                     <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 
                       ${index % 2 === 0 ? 'bg-primary/20' : 'bg-secondary/20'} blur-xl`} />
                   </div>

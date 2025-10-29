@@ -106,9 +106,9 @@ const Contact = () => {
                       className="flex items-center gap-4 p-4 rounded-lg bg-background/60 hover:bg-muted border border-border/50 hover:border-secondary/50 transition-all duration-300 group"
                     >
                       <div className="w-12 h-12 rounded-lg bg-secondary/10 border border-secondary/30 flex items-center justify-center group-hover:bg-secondary/20 group-hover:shadow-[0_0_20px_hsl(163_62%_46%/0.3)] transition-all">
-                        <Icon className="w-6 h-6 text-secondary" />
+                        <Icon className="w-6 h-6 text-primary" />
                       </div>
-                      <span className="font-medium group-hover:text-secondary transition-colors">{social.label}</span>
+                      <span className="font-medium group-hover:text-primary transition-colors">{social.label}</span>
                     </a>
                   );
                 })}
