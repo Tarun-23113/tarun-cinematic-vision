@@ -22,7 +22,7 @@ const projects = [
   {
     title: "Car Edit",
     description: "A high-energy automotive showcase focusing on macro detailing, motion blur, reflections, and engine sound design. \n\nFocus: Speed ramps, color tone contrast, and kinetic rhythm. \n\n🎯 Displays your commercial edit skills and precision cutting.",
-    videoId: "6guXv_h9izY",
+    videoId: "eKx5GdYvNiE",
     category: "Automotive",
   },
   {
@@ -34,7 +34,7 @@ const projects = [
   {
     title: "Dan Martell–Style Educational Clip",
     description: "A business insight or motivational short inspired by creators like Dan Martell or Alex Hormozi. \n\nFocus: Branded captions, bold typography, and momentum-based pacing. \n\n🎯 Shows how you can blend value-driven scripting with high-performance editing.",
-    videoId: "eKx5GdYvNiE",
+    videoId: "6guXv_h9izY",
     category: "Educational",
   },
   {
