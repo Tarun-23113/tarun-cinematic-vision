@@ -4,37 +4,37 @@ const projects = [
   {
     title: "Things Explainer Video",
     description: "A fast-paced micro-explainer combining text captions, subtle motion graphics, and contextual B-rolls.\n\nFocus: Clarity, precision editing, smooth caption transitions, and clean pacing.\n\n🎯 Showcases your ability to simplify complex ideas visually.",
-    videoId: "dQw4w9WgXcQ",
+    videoId: "fQOnLMvz5GA",
     category: "Explainer",
   },
   {
     title: "Tech / Mystery Explainer (AI + B-Roll Hybrid)",
     description: "A fact-driven narrative using an AI presenter blended with cinematic B-rolls, ambient sound design, and atmospheric color tone.\n\nFocus: Seamless AI-human integration, story-driven pacing, and visual depth.\n\n🎯 Demonstrates innovation, research storytelling, and modern edit style.",
-    videoId: "dQw4w9WgXcQ",
+    videoId: "7hLvwX5hFUA",
     category: "AI Hybrid",
   },
   {
     title: "Travel Montage",
     description: "A visually immersive edit featuring travel clips stitched with rhythmic beat-syncing and vibrant color grading. \n\nFocus: Flow, pacing, natural transitions, and emotional energy through visuals. \n\n🎯 Highlights your ability to capture vibe, movement, and energy.",
-    videoId: "dQw4w9WgXcQ",
+    videoId: "rvqbPqGaI_w",
     category: "Travel",
   },
   {
     title: "Car Edit",
     description: "A high-energy automotive showcase focusing on macro detailing, motion blur, reflections, and engine sound design. \n\nFocus: Speed ramps, color tone contrast, and kinetic rhythm. \n\n🎯 Displays your commercial edit skills and precision cutting.",
-    videoId: "dQw4w9WgXcQ",
+    videoId: "6guXv_h9izY",
     category: "Automotive",
   },
   {
     title: "Vertical Podcast with B-Roll",
     description: "A short-form talking-head clip edited for Instagram or YouTube Shorts with dynamic captions, zooms, and supportive B-rolls. \n\nFocus: Retention pacing, engaging text animations, and sharp punch edits. \n\n🎯 Proves your mastery of vertical content and social-style storytelling.",
-    videoId: "dQw4w9WgXcQ",
+    videoId: "V_9CXppNFvE",
     category: "Podcast",
   },
   {
     title: "Dan Martell–Style Educational Clip",
     description: "A business insight or motivational short inspired by creators like Dan Martell or Alex Hormozi. \n\nFocus: Branded captions, bold typography, and momentum-based pacing. \n\n🎯 Shows how you can blend value-driven scripting with high-performance editing.",
-    videoId: "dQw4w9WgXcQ",
+    videoId: "eKx5GdYvNiE",
     category: "Educational",
   },
   {
@@ -64,7 +64,7 @@ const projects = [
   {
     title: "Product Promotional Video - Lifestyle Brand",
     description: "AI-driven lifestyle brand commercial with emphasis on emotional connection and brand storytelling. \n\nFocus: Lifestyle integration, smooth transitions, and aspirational messaging. \n\n🎯 Demonstrates versatility in commercial editing approaches.",
-    videoId: "dQw4w9WgXcQ",
+    videoId: "v_dGR0wVvW4",
     category: "Lifestyle",
   },
   {
